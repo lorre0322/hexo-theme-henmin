@@ -1,0 +1,29 @@
+
+<div class="more">
+	<div class="prev">
+		<% if(page.prev){%>
+			<a href="<%- url_for(page.prev.path) %>">
+				<div class="more-icon">
+					<svg viewBox="0 0 1024 1024" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+				</div>
+				<div>
+					<div class="nav-label">Previous Post</div>
+					<div class="nav-title"><%= page.prev.title %></div>
+				</div>
+			</a>
+		<%}%>
+	</div>
+	<div class="next">
+		<% if(page.next){%>
+			<a href="<%- url_for(page.next.path) %>">
+				<div>
+					<div class="nav-label">Next Post</div>
+					<div class="nav-title"><%= page.next.title %></div>
+				</div>
+				<div class="more-icon">
+					<svg viewBox="0 0 1024 1024" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+				</div>
+			</a>
+		<%}%>
+	</div>
+</div>

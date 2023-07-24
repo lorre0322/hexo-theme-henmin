@@ -1,0 +1,40 @@
+Theme:
+	name: Leslie
+	power: Hexo
+  version: 1.0
+
+Config:
+  rss: /atom.xml
+  pjax: true
+  lazyload: /img/load.gif
+
+Header:
+	home: /
+  blog: /blog
+  # category: /category
+  tag: /tag
+  mumbler: /mumbler
+  # link: /link
+	search: /search
+
+Website:
+	name: 🌿悬铃木.
+	logo: /img/favicon.jpg
+	description: plus I'll see you there utmost definitely!.
+
+Author:
+	name: 悬铃木.
+	intro: plus I'll see you there utmost definitely!
+	avastar: /img/faces.jpeg
+	
+Contact: 
+	github: https://github.com/lorre0322
+	wechat: Lorre_0322
+	music: https://music.163.com/#/user/home?id=480021387
+	mail: lorre0322@foxmail.com
+	# tencent: 693739563
+	# bilibili:  https://space.bilibili.com/35788350
+
+CopyRight:
+  License: CC BY-NC-SA 3.0 CN
+  copyright_since: '© 2018 - 2020'

@@ -1,0 +1,14 @@
+<% if (page.total > 1){ %>
+  <div class="pagination">
+    <% 
+      const prev = "<"
+      const next = ">"
+      %>
+    <%- paginator({
+      prev_text: prev,
+      next_text: next,
+      mid_size: 3,
+      escape: false
+    }) %>
+  </div>
+  <%}%>

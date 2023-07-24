@@ -1,0 +1,31 @@
+<div class="post-intro">
+	<div class="post-img">
+		<% if(page.img){ %>
+			<img src='<%=page.img%>' alt="">
+		<% } %>
+	</div>
+	<h2 class="post-title page-title">
+		<a href="#"><%= page.title %> </a>
+	</h2>
+	<% 
+		var en_mon = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"]
+		var get_mon = en_mon[Number(date(page.date, "MM").replace(/\b(0+)/gi,"")) - 1]
+	%>
+	<div class="post-date">
+		<span class="post-month"><%=get_mon%></span>
+		<span class="post-day"><%=date(page.date, "DD")%></span>
+		<span class="post-year"><%=date(page.date, "YYYY")%></span>
+		<span class="cut"></span>
+		<span class="post-author">by.
+			<% if(page.author){ %>
+				<%=page.authore %>
+			<% }else{ %>
+				<%=theme.Author.name %>
+			<% }%>
+		</span>
+	</div>
+</div>
+<div class="post-content">
+	<%- page.content %>
+</div>
+<%- partial('_global/more') %>

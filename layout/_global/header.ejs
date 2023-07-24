@@ -1,0 +1,11 @@
+<header>
+  <nav class="menu list">
+	<% for(item in theme.Header){ %>
+    <% if(theme.Header[item]){ %>
+      <a class="it" href='<%=theme.Header[item]%>'>
+      <%- partial('svg/'+item) %>
+      </a>
+    <% } %>
+	<% } %>
+</nav>
+</header>

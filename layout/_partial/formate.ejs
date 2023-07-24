@@ -1,0 +1,8 @@
+<%
+var en_mon = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"]
+var get_mon = en_mon[Number(date(params, "MM").replace(/\b(0+)/gi,"")) - 1]
+%>
+
+<span class="post-month"><%=get_mon%></span>
+<span class="post-day"><%=date(params, "DD")%></span>
+<span class="post-year"><%=date(params, "YYYY")%></span>

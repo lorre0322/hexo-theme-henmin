@@ -1,0 +1,16 @@
+{
+  "name": "hexo-theme-henmin",
+  "version": "1.0.0",
+  "description": "a simple hexo theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple",
+    "darkmod",
+    "mini"
+  ],
+  "author": "lorre",
+  "license": "ISC"
+}

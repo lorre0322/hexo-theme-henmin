@@ -1,0 +1,35 @@
+:root {
+  --txt-cl: #2d2d2d;
+  --bg-cl: #f5f0e5;
+}
+html {
+  background-color: var(--bg-cl);
+  color: var(--txt-cl);
+}
+body {
+  margin: 0;
+}
+.wrap {
+  max-width: 680px;
+  margin-inline: auto;
+}
+#contain {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+a {
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: var(--bg-cl);
+}
+header .menu {
+  font-size: 0;
+}
+header svg {
+  width: 40px;
+}

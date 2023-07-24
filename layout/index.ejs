@@ -1,0 +1,20 @@
+<div class="post-list">
+	<h3>「 文章  」</h3>
+	<!-- 遍历文章 -->
+	<% page.posts.each(function (post) { %>
+		<!-- 置顶 -->
+		<% if (post.sticky) { 
+			var sticky = 'sticky'
+		} %>
+	<article class="<%=sticky%>">
+		<a href='/<%=post.path%>'>
+			<%= post.title %>
+		</a>
+		<span class="cut"></span>
+		<div class="post-date">
+			<%- partial('_partial/formate', { params: post.date }) %>
+		</div>
+	</article>
+	<% }) %>
+	<%- partial('_partial/pagination') %>
+</div>
