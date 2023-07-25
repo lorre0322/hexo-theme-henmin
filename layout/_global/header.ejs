@@ -1,8 +1,8 @@
-<header>
-  <nav class="menu list">
+<header class="wrap">
+  <nav class="hd-menu">
 	<% for(item in theme.Header){ %>
     <% if(theme.Header[item]){ %>
-      <a class="it" href='<%=theme.Header[item]%>'>
+      <a href='<%=theme.Header[item]%>'>
       <%- partial('svg/'+item) %>
       </a>
     <% } %>

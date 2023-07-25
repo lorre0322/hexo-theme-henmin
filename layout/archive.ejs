@@ -1,0 +1,11 @@
+<% const sub_title =  page.category || page.tag %>
+<h3>「  归档  」<sub><%= sub_title%></sub></h3>
+<% var last = "1998"%>
+<% page.posts.each(function (post) { %>
+  <article class="ar">
+    <a class="ar-ti" href="<%- url_for(post.path) %>"><%= post.title %>
+    <%- partial('_partial/formate', { params: post.date }) %>
+    </a>
+  </article>
+<% }) %>
+<%- partial('_partial/paginator') %>

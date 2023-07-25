@@ -10,11 +10,11 @@ Config:
 
 Header:
 	home: /
-  blog: /blog
-  # category: /category
-  tag: /tag
+  archive: /archives
+  category: /categories
+  tags: /tags
   mumbler: /mumbler
-  # link: /link
+  link: /link
 	search: /search
 
 Website:

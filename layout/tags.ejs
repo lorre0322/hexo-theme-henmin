@@ -1,0 +1,10 @@
+<h3>「 标签  」</h3>
+<div class="list">
+  <%- list_tags(site.tags,{
+    show_count: true,
+    class: 'tag',
+    transform:function(name){
+      return titlecase(name)
+    }
+  }) %>
+</div>

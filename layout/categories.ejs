@@ -1,0 +1,10 @@
+<h3>「 分类  」</h3>
+<div class="list">
+  <%- list_categories(site.categories,{
+    show_count: true,
+    class: 'ca',
+    transform:function(name){
+      return titlecase(name)
+    }
+  }) %>
+</div>
