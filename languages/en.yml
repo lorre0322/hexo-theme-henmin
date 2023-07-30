@@ -1,0 +1,22 @@
+header:
+  search:
+    post: Search for articles
+    history: Search for History
+    clear: Clear
+
+aside:
+  link: Links
+
+post:
+  title: No Title
+  tags: Tags
+  categories: Categories
+  toc: Catalog
+  copyright:
+    author: Authorship
+    article_link: Article Link
+    copyright: Copyright
+
+footer:
+  framework: Framework
+  theme: Theme

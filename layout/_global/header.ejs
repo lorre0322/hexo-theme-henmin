@@ -1,11 +1,18 @@
 <header class="wrap">
-  <nav class="hd-menu">
+  <ul class="list menu">
 	<% for(item in theme.Header){ %>
     <% if(theme.Header[item]){ %>
-      <a href='<%=theme.Header[item]%>'>
+      <a class="menu-item" href='<%=theme.Header[item]%>'>
+        <li>
       <%- partial('svg/'+item) %>
+        </li>
       </a>
     <% } %>
 	<% } %>
-</nav>
+  <% if(theme.search.enable){ %>
+    <li id="search" class="menu-item">
+      <%- partial('_global/svg/search') %>
+    </li>
+  <% } %>
+  </ul>
 </header>

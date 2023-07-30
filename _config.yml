@@ -1,39 +1,49 @@
-Theme:
-	name: Leslie
-	power: Hexo
-  version: 1.0
-
-Config:
-  rss: /atom.xml
-  pjax: true
-  lazyload: /img/load.gif
-
-Header:
-	home: /
-  archive: /archives
-  category: /categories
-  tags: /tags
-  mumbler: /mumbler
-  link: /link
-	search: /search
-
+# default title
 Website:
 	name: 🌿悬铃木.
 	logo: /img/favicon.jpg
 	description: plus I'll see you there utmost definitely!.
 
+# header menu
+# (if you want add menu item please add svg in path /global/svg)
+Header:
+	home: /
+  archive: /archives
+  # category: /categories
+  tags: /tags
+  mumbler: /mumbler
+  link: /link
+
+# theme config
+search:
+  enable: true
+  path: search.json
+rss: 
+  enable: true
+  path: /atom.xml
+pjax: 
+  enable: true
+  path: pjax.js
+lazyload:
+  enable: false
+  path: /img/load.gif
+# npm i hexo-wordcount
+wordcount:
+  enable: true
+
+# article author
 Author:
 	name: 悬铃木.
 	intro: plus I'll see you there utmost definitely!
 	avastar: /img/faces.jpeg
-	
+
 Contact: 
 	github: https://github.com/lorre0322
 	wechat: Lorre_0322
 	music: https://music.163.com/#/user/home?id=480021387
 	mail: lorre0322@foxmail.com
-	# tencent: 693739563
-	# bilibili:  https://space.bilibili.com/35788350
+	tencent: 693739563
+	bilibili:  https://space.bilibili.com/35788350
 
 CopyRight:
   License: CC BY-NC-SA 3.0 CN

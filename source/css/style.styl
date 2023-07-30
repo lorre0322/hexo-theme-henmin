@@ -1,45 +1,30 @@
 @import "./styl/theme.styl";
+@import "styl/theme.styl";
 @import "styl/global.styl";
+@import "styl/meta.styl";
+@import "styl/post.styl";
 @import "styl/paginator.styl";
+@import "styl/footer.styl";
+@import "styl/search.styl";
 
 #contain{
-  margin-top: 50px;
-  min-height: 70vh;
-  padding: 10px;
-  overflow: hidden;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  min-height: 400px;
 }
-.banner{
-  margin: 0 -10px;
-}
-header{
-  width: 100%;
+header {
   position: fixed;
-  padding: 5px 2px;
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--bg-cl);
+  background-color: var(--bg);
   z-index: 10;
-  .hd-menu{
-    line-height:0;
+  .menu{
+    font-size: 0;
+    line-height: none;
   }
-  svg{
+  .menu svg{
     width: 38px;
-  }
-}
-footer{
-  padding: 10px;
-}
-@media screen and (max-width:680px) {
-  header{
-    bottom: 0;
-    top: auto;
-    text-align: right;
-  }
-  #contain{
-    margin-top: 0;
-  }
-  footer{
-    margin-bottom: 50px;
+    vertical-align:bottom;
   }
 }

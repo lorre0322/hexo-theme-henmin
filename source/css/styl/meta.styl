@@ -1,0 +1,33 @@
+.list{
+  .ca-list,
+  .tag-list{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+  .ca-list-item,
+  .tag-list-item{
+    display: inline-block;
+    padding: 5px 10px 5px 0;
+  }
+  .ca-list-link,
+  .tag-list-link{
+    padding: 0 5px;
+  }
+  .ca-list-count,
+  .tag-list-count{
+    font-size: .8em;
+    color: var(--tx-se);
+  }
+}
+.meta{
+  margin: 1.2em 0;
+  font-size: .9em;
+  time::after,span::after{
+    content: "/";
+    padding: 0 8px;
+  }
+  .ca-list .ca-list-item{
+    padding: 0;
+  }
+}

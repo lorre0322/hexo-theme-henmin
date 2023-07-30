@@ -1,1 +1,20 @@
-<h3>「 搜索  」</h3>
+<h3>「 搜索 」</h3>
+<p>你能找寻到我的一切，除了灵魂。</p>
+<%=(theme.search.path) %>
+
+<% if(theme.search.enable){ %>
+  <div class="search" tabindex="-1">
+    <input class="search-input" placeholder="<%= _p('header.search.post') %>" type="search" maxlength="64">
+    <div class="seach-icon-container">
+    </div>
+    <div class="search-history">
+      <div class="search-history-title">
+        <span><%= _p('header.search.history') %></span>
+        <span class="search-history-clear"><%= _p('header.search.clear') %></span>
+      </div>
+      <div class="search-history-list"></div>
+    </div>
+    <div class="search-result"></div>
+    <%- js({ src: 'js/backup.js',  path: url_for(theme.search.path), defer: true }) %>
+  </div>
+  <% } %>

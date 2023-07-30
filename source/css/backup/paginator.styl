@@ -1,0 +1,41 @@
+.pagination{
+  margin: 20px 0;
+  .current{
+    color: var(--tx-se);
+  }
+  .page-number{
+    padding: 5px 10px;
+  }
+}
+.more{
+  margin: 50px 0;
+  padding: 40px 0;
+  border-top: 1px solid rgba(200,200,200,.2);
+  border-bottom: 1px solid rgba(200,200,200,.2);
+  display: flex;
+  justify-content: space-between;
+  .prev>a,.next>a{
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .prev{
+    text-align: left;
+    .more-icon{
+      padding-right: .5em;
+    }
+  }
+  .next{
+    text-align: right;
+    .more-icon{
+      padding-left: .5em;
+    }
+  }
+  .nav-label{
+    line-height: 1.2em;
+  }
+  .nav-title{
+    font-weight: 700;
+  }
+}

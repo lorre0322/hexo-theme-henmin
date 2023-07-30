@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 <head>
 	<%- partial('_global/head') %>
 </head>
-<body>
+<body class="search">
 <div id="Henmin">
 	<%- partial('_global/header') %>
-	<%- partial('_global/footer') %>
+	<%- partial('_global/shade') %>
 	<main id="contain" class="wrap">
 		<%- body%>
 	</main>
+	<%- partial('_global/footer') %>
+	<div class="script">
+		<%- partial('_global/pjax') %>
+	</div>
 </div>
 </body>
 </html>

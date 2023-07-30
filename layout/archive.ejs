@@ -1,11 +1,22 @@
 <% const sub_title =  page.category || page.tag %>
-<h3>「  归档  」<sub><%= sub_title%></sub></h3>
+<h3><a href="/archives">「  归档  」</a><sub><%= sub_title%></sub></h3>
+<div class="list">
+  <%- list_categories(site.categories,{
+    show_count: true,
+    class: 'ca',
+    transform:function(name){
+      return titlecase(name)
+    }
+  }) %>
+</div>
+<section>
 <% var last = "1998"%>
-<% page.posts.each(function (post) { %>
-  <article class="ar">
-    <a class="ar-ti" href="<%- url_for(post.path) %>"><%= post.title %>
-    <%- partial('_partial/formate', { params: post.date }) %>
-    </a>
-  </article>
+<% page.posts.each(function (post,index) { %>
+<article class="arti dl-<%=index %>">
+  <a class="arti-item" title="<%= post.desc || post.title %>" href="<%- url_for(post.path) %>"><%= post.title %>
+  <%- partial('_partial/formate', { params: post.date }) %>
+  </a>
+</article>
 <% }) %>
+</section>
 <%- partial('_partial/paginator') %>

@@ -1,31 +1,35 @@
-<div class="post-intro">
-	<div class="post-img">
-		<% if(page.img){ %>
-			<img src='<%=page.img%>' alt="">
-		<% } %>
+<div class="intro">
+	<% if(page.img){ %>
+	<div class="banner">
+		<img src='<%=page.img%>' alt="">
 	</div>
-	<h2 class="post-title page-title">
+	<% } %>
+	<h2 class="title">
 		<a href="#"><%= page.title %> </a>
 	</h2>
-	<% 
-		var en_mon = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"]
-		var get_mon = en_mon[Number(date(page.date, "MM").replace(/\b(0+)/gi,"")) - 1]
-	%>
-	<div class="post-date">
-		<span class="post-month"><%=get_mon%></span>
-		<span class="post-day"><%=date(page.date, "DD")%></span>
-		<span class="post-year"><%=date(page.date, "YYYY")%></span>
-		<span class="cut"></span>
-		<span class="post-author">by.
-			<% if(page.author){ %>
-				<%=page.authore %>
-			<% }else{ %>
-				<%=theme.Author.name %>
-			<% }%>
+	<div class="meta">
+    <%- partial('_partial/formate', { params: page.date }) %>
+		<span class="author">by .<%= page.author || theme.Author.name %> </span>
+		<% if(list_categories(page.categories)){ %>
+		<span class="list">
+			<%- list_categories(page.categories,{
+				show_count: false,
+				class: 'ca'
+			}) %>
 		</span>
-	</div>
+		<% } %>
+		<% if(theme.wordcount.enable){ %>
+		<span><%= wordcount(page.content) %> 字</span>
+		<% } %>
 </div>
-<div class="post-content">
-	<%- page.content %>
+	<div class="count"><%- page.content %></div>
+<div class="list" style="font-size: 15px;font-weight: 700;">
+	<%- list_tags(page.tags,{
+		show_count: true,
+		class: 'tag',
+		transform:function(name){
+			return titlecase(name)
+		}
+	}) %>
 </div>
 <%- partial('_global/more') %>
