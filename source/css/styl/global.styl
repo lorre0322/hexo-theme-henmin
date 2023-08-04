@@ -12,6 +12,18 @@ html{
   font-weight: 100;
   font-size: 15px;
 }
+
+::-webkit-scrollbar{
+  width: 4px;
+}
+::-webkit-scrollbar-track{
+background-color: var(--bg);
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 2px;
+background-color: var(--tx-se);
+}
+
 @media screen and (max-width:680px) {
   html{
     font-size: 16px;
@@ -55,8 +67,9 @@ ul,ol{
 }
 blockquote{
   margin: 1em 0;
-  padding: 1em ;
-  background: var(--bg-cr);
+  padding: .5em 1em ;
+  background: var(--bg-se);
+  border-radius: 2px;
 }
 time{
   color: var(--tx-se);
@@ -65,7 +78,7 @@ hr{
   border: .5px solid var(--tx-se);
   margin: 30px 0;
 }
-input,textarea{
+input[type=text],textarea{
   width: 100%;
   box-sizing: border-box;
   background: transparent;
@@ -97,4 +110,14 @@ input,textarea{
   padding: 0 10px;
   font-size: 13px;
   vertical-align: bottom;
+}
+#pj-pro{
+  width: 0%;
+  height: 3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-se);
+  z-index: 9999;
+  transition: width .1s;
 }
