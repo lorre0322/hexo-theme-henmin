@@ -1,8 +1,7 @@
 # default title
 Website:
-	name: 🌿悬铃木.
-	logo: /img/favicon.jpg
-	description: plus I'll see you there utmost definitely!.
+	name: 悬铃木
+	description: Plus I'll see you there utmost definitely !
 
 # header menu
 # (if you want add menu item please add svg in path /global/svg)
@@ -11,7 +10,7 @@ Header:
   archive: /archives
   # category: /categories
   tags: /tags
-  mumbler: /mumbler
+  moment: /moment
   link: /link
 
 # theme config

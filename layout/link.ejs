@@ -1,12 +1,14 @@
 
 <% const data=page.site.data.link %>
-<% for(item in data ){ %>
-  <h5>「 <%=item %>  」</h5>
-  <ul class="list item">
+<% for(item in data){ %>
+  <h5 class="an">「 <%=item %>  」</h5>
+  <ul class="list item an">
   <% for(name in data[item]){ %>
     <li><a href='<%=data[item][name] %>' target="_blank"><%=name %></a></li>
   <% } %>
   </ul>
   <% } %>
 <hr>
-<p><%-page.content %></p>
+<div class="an dl-1">
+  <%-page.content %>
+</div>

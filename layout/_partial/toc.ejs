@@ -1,0 +1,6 @@
+<% if(page.toc && toc(page.content).length!==0){ %>
+  <details class="toc an dl-4">
+    <summary>目录导航</summary>
+    <%- toc(page.content, {class:'t-li',list_number: false}) %>
+  </details>
+<% } %>

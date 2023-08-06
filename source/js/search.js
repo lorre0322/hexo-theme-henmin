@@ -1,10 +1,8 @@
 !(async () => {
-  const $ = (Selector, el) => (el || document).querySelector(Selector)
-
   const currentScript = document.currentScript
   const path = currentScript.getAttribute('path')
-  const input = HM.$('s-txt')
-  const wrap = HM.$('s-wrap')
+  const input = $('s-txt')
+  const wrap = $('s-wrap')
 
   const response = await fetch(path)
   const datas = (await response.json()).map((item) => {

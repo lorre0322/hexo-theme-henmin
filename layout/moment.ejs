@@ -1,0 +1,67 @@
+<h3 class="an">「 瞬间  」</h3>
+<details class="an dl-1">
+  <summary>🤔 存在的意义</summary>
+  <div>
+    <p>自毕业后我就逐渐关闭了我的<del>朋友圈</del>，以及一众平台。我不想自己的行为被监控，思想被约束。但我又迫切需要一个说话的地方，于是有了这个板块。</p>
+    <p>这是一个记录我当下想法的地方，它可能是一个情感树洞，可能是技术分享，也有可能是一些生活吐槽。<br>颇为简陋，但对我来讲意义重大。</p>
+  </div>
+</details>
+
+<div id="moment"></div>
+<script>
+const data=()=>{
+  return new Promise((res, rej)=>{
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://api.lorre.top/moment/list/1/8', true)
+    xhr.send()
+    xhr.onreadystatechange = () => {
+      try {
+        if (xhr.readyState === 4) {
+          const success = xhr.status >= 200 && xhr.status < 300
+          if (success) res(JSON.parse(xhr.responseText))
+          else rej('failed')
+        }
+      } catch (error) {
+        res(error)
+      }
+    }
+  })
+}
+const fm=(a)=>{
+  a=a*1000
+  const date=new Date(a)
+  const Y=date.getFullYear()
+  const M=date.getMonth()+1
+  const D=date.getDate()
+  const h=date.getHours()
+  const m=date.getMinutes()
+  const s=date.getMinutes()
+  return Y+'.'+M+'.'+D+'   '+h+':'+m+':'+s
+}
+async function getdata() {
+  const res=await data()
+  const app=$('moment')
+  app.innerHTML='loading...'
+  const div=document.createDocumentFragment()
+  if(res.msg==='success'){
+    app.innerHTML=''
+    res.data.forEach((ele,index) => {
+      const p=document.createElement('div')
+      const time=document.createElement('time')
+      p.className=`an dl-${index}`
+      p.innerHTML=ele.body
+      time.innerText=fm(ele.date)
+  console.log(time);
+      p.appendChild(time)
+      div.appendChild(p)
+    });
+  }else{
+    app.innerHTML='😮‍💨 Get data failed.'
+  }
+  app.appendChild(div)
+}
+getdata()
+document.addEventListener("pjax:complete", (() => {
+getdata()
+}), 200)
+</script>

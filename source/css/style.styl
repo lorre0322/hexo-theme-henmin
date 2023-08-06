@@ -1,7 +1,10 @@
 @import "styl/theme.styl";
+@import "styl/animate.styl";
 @import "styl/global.styl";
+@import "styl/toc.styl";
 @import "styl/meta.styl";
 @import "styl/post.styl";
+@import "styl/moment.styl";
 @import "styl/paginator.styl";
 @import "styl/footer.styl";
 @import "styl/search.styl";
@@ -23,18 +26,20 @@ header {
     display: flex;
     padding: 5px 0;
     justify-content:flex-end;
-    a{
+    .menu-item{
       padding: 2px 0;
       display: inline-block;
     }
+    
   }
   .menu svg{
     width: 38px;
     vertical-align: bottom;
   }
   .menu svg g{
-    transition: stroke .5s;
+    transition: stroke .2s;
   }
+  .menu a.active svg g,
   .menu a:hover svg g{
     stroke:var(--tx-lin);
   }

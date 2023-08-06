@@ -1,13 +1,13 @@
 <div class="intro">
 	<% if(page.img){ %>
-	<div class="banner">
+	<div class="banner an dl-1">
 		<img src='<%=page.img%>' alt="">
 	</div>
 	<% } %>
-	<h2 class="title">
+	<h2 class="title an dl-2">
 		<a href="#"><%= page.title %> </a>
 	</h2>
-	<div class="meta">
+	<div class="meta an dl-3">
     <%- partial('_partial/formate', { params: page.date }) %>
 		<span class="author">by .<%= page.author || theme.Author.name %> </span>
 		<% if(list_categories(page.categories)){ %>
@@ -22,8 +22,9 @@
 		<span><%= wordcount(page.content) %> 字</span>
 		<% } %>
 </div>
-	<div class="count"><%- page.content %></div>
-<div class="list" style="font-size: 15px;font-weight: 700;">
+<%- partial('_partial/toc') %>
+<div class="count an dl-5"><%- page.content %></div>
+<div class="list an dl-6" style="font-size: 15px;font-weight: 700;">
 	<%- list_tags(page.tags,{
 		show_count: true,
 		class: 'tag',

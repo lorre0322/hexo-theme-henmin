@@ -1,6 +1,6 @@
 <% const sub_title =  page.category || page.tag %>
-<h3><a href="/archives">「  归档  」</a><sub><%= sub_title%></sub></h3>
-<div class="list">
+<h3 class="an"><a href="/archives">「  归档  」</a><sub><%= sub_title%></sub></h3>
+<div class="list an">
   <%- list_categories(site.categories,{
     show_count: true,
     class: 'ca',
@@ -9,10 +9,10 @@
     }
   }) %>
 </div>
-<section>
+<section class="an dl-1">
 <% var last = "1998"%>
 <% page.posts.each(function (post,index) { %>
-<article class="arti dl-<%=index %>">
+<article class="arti">
   <a class="arti-item" title="<%= post.desc || post.title %>" href="<%- url_for(post.path) %>"><%= post.title %>
   <%- partial('_partial/formate', { params: post.date }) %>
   </a>

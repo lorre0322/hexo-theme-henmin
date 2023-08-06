@@ -1,36 +1,21 @@
 
-// function toggleTheme() {
-//   const root=document.documentElement;
-//   const btn=HM.$("sw-th");
-//   const light=()=>{
-//     root.classList.add("light");
-//     localStorage.setItem("theme","light");
-//     btn.innerText="开灯";
-//   };
-//   const dark=()=> {
-//     root.classList.remove("light");
-//     localStorage.removeItem("theme");
-//     btn.innerText="关灯";
-//   };
-//   (()=>{
-//     const theme= localStorage.getItem("theme")||"";
-//     theme?light():dark();
-//   })();
-//   btn.onclick=()=>{
-//     const theme=localStorage.getItem("theme")||"";
-//     theme?dark():light();
-//   }
-// }
+const $=(dom)=>{
+	return document.getElementById(dom)
+}
+const HC=(ele, cls)=>{
+	return (ele.className).indexOf(cls) > -1;
+ }
+
 
 function toggleSearch() {
-  const btn=HM.$("search");
+  const btn=$("search");
   const showSearch=()=>{
-    if (HM.hasClass(document.body,'search')) {
+    if (HC(document.body,'search')) {
 			document.body.classList.remove('search')
     }else{
 			document.body.classList.add('search')
       setTimeout(()=>{
-        HM.$("s-txt").focus();
+        $("s-txt").focus();
       },300)
     }
   }
@@ -44,9 +29,7 @@ function toggleSearch() {
   })
 }
 
-
 const root=document.documentElement;
-const btn=HM.$("sw-th");
 const light=()=>{
   root.classList.add("light");
   localStorage.setItem("theme","light");
@@ -54,27 +37,78 @@ const light=()=>{
 const dark=()=>{
   root.classList.remove("light");
   localStorage.removeItem("theme");
-  HM.$("sw-th").innerText="开灯"
+  $("sw-th").innerText="开灯"
 }
 function toggleTheme() {
-  HM.$('sw-th').onclick=()=>{
+  $('sw-th').onclick=()=>{
     const theme = localStorage.getItem("theme");
     if(theme){
       dark()
     }else{
       light()
-      HM.$("sw-th").innerText="关灯"
+      $("sw-th").innerText="关灯"
     }
   }
 }
+const toggleMusic=()=>{
+  const btn=$('sw-au'),ctl=$('ch-au'),audio=$('bg-au')
+  audio.src=play_list[0]
+  var play_num=0
+  btn.onclick=()=>{
+    if(HC(audio,'play')) {
+      audio.classList.remove('play')
+      btn.innerText='播放'
+      audio.pause()
+    }else{
+      audio.classList.add('play')
+      btn.innerText='暂停'
+      audio.play()
+    }
+  }
+  audio.addEventListener('ended',()=>{
+    if(!audio.loop){
+      if(play_num===play_list.length-1){
+        play_num=0
+      }else{
+        play_num++
+      }
+      audio.src=play_list[play_num]
+      audio.play()
+    }
+  })
+  ctl.onclick=()=>{ audio.loop=!audio.loop }
+  ctl.ontouchstart=(a)=>{
+    if(HC($('bg-au'),'play')){
+      const statx= a.targetTouches[0].clientX;
+      ctl.ontouchend=(b)=>{
+        const endx=b.changedTouches[0].clientX;
+        const sta=endx-statx
+        if(sta>0 && play_num<=play_list.length){
+          play_num++
+          if(play_num===play_list.length) play_num=0
+          audio.src=play_list[play_num]
+        }
+        if(sta<0 && play_num>=0){
+          if(play_num===0) play_num=play_list.length
+          play_num--
+          audio.src=play_list[play_num]
+        }
+        audio.play()
+      }
+    }
+  }
+}
+
 !(() => {
   const theme= localStorage.getItem("theme");
   if (document.readyState === "loading") {
     if(theme) light()
   }
   document.addEventListener('DOMContentLoaded', function () {
-    if(theme) HM.$("sw-th").innerText="关灯";
+    if(theme) $("sw-th").innerText="关灯";
     toggleTheme();
     toggleSearch();
+    toggleMusic();
+    changeActive()
   });
 })();
