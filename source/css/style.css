@@ -4,12 +4,22 @@
   --tx-pr: #f5f0e5;
   --tx-se: #8a8a8a;
   --tx-lin: #a66461;
+  --hl-com: #908caa;
+  --hl-bui: #f6c177;
+  --hl-key: #d7827e;
+  --hl-str: #9ccfd8;
+  --hl-par: #9ccfd8;
+  --hl-tit: #ea9d34;
+  --hl-var: #907aa9;
 }
 .light:root {
   --bg: #f5f0e5;
   --bg-se: #f2e8db;
   --tx-pr: #2d2d2d;
   --tx-lin: #d99235;
+  --hl-bui: #eb6f92;
+  --hl-str: #286983;
+  --hl-par: #286983;
 }
 .an {
   opacity: 0;
@@ -135,10 +145,10 @@ h6 {
   margin-bottom: 0.2em;
 }
 h1 {
-  font-size: 1.55em;
+  font-size: 1.5em;
 }
 h2 {
-  font-size: 1.45em;
+  font-size: 1.4em;
 }
 h3 {
   font-size: 1.4em;
@@ -300,6 +310,35 @@ details[open] > summary::after {
 .arti time::before {
   content: "/";
   padding: 0 10px;
+}
+pre {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 1em;
+  border-radius: 8px;
+  background-color: var(--bg-se);
+  font-size: 14px;
+}
+.hljs-comment {
+  color: var(--hl-com);
+}
+.hljs-built_in {
+  color: var(--hl-bui);
+}
+.hljs-keyword {
+  color: var(--hl-key);
+}
+.hljs-string {
+  color: var(--hl-str);
+}
+.hljs-params {
+  color: var(--hl-par);
+}
+.hljs-title {
+  color: var(--hl-tit);
+}
+.hljs-variable {
+  color: var(--hl-var);
 }
 #moment {
   margin: 40px 0;

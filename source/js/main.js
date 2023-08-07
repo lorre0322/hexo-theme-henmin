@@ -99,6 +99,11 @@ const toggleMusic=()=>{
   }
 }
 
+const toTop=()=>{
+  $('load').onclick=()=>{
+    window.scrollTo(0,0)
+  }
+}
 !(() => {
   const theme= localStorage.getItem("theme");
   if (document.readyState === "loading") {
@@ -110,5 +115,6 @@ const toggleMusic=()=>{
     toggleSearch();
     toggleMusic();
     changeActive()
+    toTop()
   });
 })();
