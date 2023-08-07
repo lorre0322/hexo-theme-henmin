@@ -8,59 +8,9 @@
 </details>
 
 <div id="moment"></div>
+
 <script>
-const data=()=>{
-  return new Promise((res, rej)=>{
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', 'https://api.lorre.top/moment/list/1/8', true)
-    xhr.send()
-    xhr.onreadystatechange = () => {
-      try {
-        if (xhr.readyState === 4) {
-          const success = xhr.status >= 200 && xhr.status < 300
-          if (success) res(JSON.parse(xhr.responseText))
-          else rej('failed')
-        }
-      } catch (error) {
-        res(error)
-      }
-    }
-  })
-}
-const fm=(a)=>{
-  a=a*1000
-  const date=new Date(a)
-  const Y=date.getFullYear()
-  const M=date.getMonth()+1
-  const D=date.getDate()
-  const h=date.getHours()
-  const m=date.getMinutes()
-  const s=date.getMinutes()
-  return Y+'.'+M+'.'+D+'   '+h+':'+m+':'+s
-}
-async function getdata() {
-  const res=await data()
-  const app=$('moment')
-  app.innerHTML='loading...'
-  const div=document.createDocumentFragment()
-  if(res.msg==='success'){
-    app.innerHTML=''
-    res.data.forEach((ele,index) => {
-      const p=document.createElement('div')
-      const time=document.createElement('time')
-      p.className=`an dl-${index}`
-      p.innerHTML=ele.body
-      time.innerText=fm(ele.date)
-      p.appendChild(time)
-      div.appendChild(p)
-    });
-  }else{
-    app.innerHTML='😮‍💨 Get data failed.'
-  }
-  app.appendChild(div)
-}
-getdata()
-document.addEventListener("pjax:complete", (() => {
-getdata()
-}), 200)
+Moment.init({
+  el: "moment"
+})
 </script>

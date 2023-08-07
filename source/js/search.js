@@ -1,8 +1,8 @@
 !(async () => {
   const currentScript = document.currentScript
   const path = currentScript.getAttribute('path')
-  const input = $('s-txt')
-  const wrap = $('s-wrap')
+  const input = _$('s-txt')
+  const wrap = _$('s-wrap')
 
   const response = await fetch(path)
   const datas = (await response.json()).map((item) => {

@@ -1,5 +1,5 @@
 
-const $=(dom)=>{
+const _$=(dom)=>{
 	return document.getElementById(dom)
 }
 const HC=(ele, cls)=>{
@@ -8,14 +8,14 @@ const HC=(ele, cls)=>{
 
 
 function toggleSearch() {
-  const btn=$("search");
+  const btn=_$("search");
   const showSearch=()=>{
     if (HC(document.body,'search')) {
 			document.body.classList.remove('search')
     }else{
 			document.body.classList.add('search')
       setTimeout(()=>{
-        $("s-txt").focus();
+        _$("s-txt").focus();
       },300)
     }
   }
@@ -37,21 +37,21 @@ const light=()=>{
 const dark=()=>{
   root.classList.remove("light");
   localStorage.removeItem("theme");
-  $("sw-th").innerText="开灯"
+  _$("sw-th").innerText="开灯"
 }
 function toggleTheme() {
-  $('sw-th').onclick=()=>{
+  _$('sw-th').onclick=()=>{
     const theme = localStorage.getItem("theme");
     if(theme){
       dark()
     }else{
       light()
-      $("sw-th").innerText="关灯"
+      _$("sw-th").innerText="关灯"
     }
   }
 }
 const toggleMusic=()=>{
-  const btn=$('sw-au'),ctl=$('ch-au'),audio=$('bg-au')
+  const btn=_$('sw-au'),ctl=_$('ch-au'),audio=_$('bg-au')
   audio.src=play_list[0]
   var play_num=0
   btn.onclick=()=>{
@@ -78,7 +78,7 @@ const toggleMusic=()=>{
   })
   ctl.onclick=()=>{ audio.loop=!audio.loop }
   ctl.ontouchstart=(a)=>{
-    if(HC($('bg-au'),'play')){
+    if(HC(_$('bg-au'),'play')){
       const statx= a.targetTouches[0].clientX;
       ctl.ontouchend=(b)=>{
         const endx=b.changedTouches[0].clientX;
@@ -100,7 +100,7 @@ const toggleMusic=()=>{
 }
 
 const toTop=()=>{
-  $('load').onclick=()=>{
+  _$('load').onclick=()=>{
     window.scrollTo(0,0)
   }
 }
@@ -110,11 +110,10 @@ const toTop=()=>{
     if(theme) light()
   }
   document.addEventListener('DOMContentLoaded', function () {
-    if(theme) $("sw-th").innerText="关灯";
+    if(theme) _$("sw-th").innerText="关灯";
     toggleTheme();
     toggleSearch();
     toggleMusic();
-    changeActive()
     toTop()
   });
 })();

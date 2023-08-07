@@ -311,6 +311,19 @@ details[open] > summary::after {
   content: "/";
   padding: 0 10px;
 }
+.cont h1::before {
+  content: "#";
+  color: var(--tx-se);
+  padding-right: 10px;
+}
+code {
+  background-color: var(--bg-se);
+  color: var(--hl-key);
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-inline: 2px;
+  vertical-align: middle;
+}
 pre {
   overflow: auto;
   box-sizing: border-box;
@@ -318,6 +331,12 @@ pre {
   border-radius: 8px;
   background-color: var(--bg-se);
   font-size: 14px;
+}
+pre > code {
+  background-color: none;
+  color: var(--tx-pr);
+  margin: 0;
+  padding: 0;
 }
 .hljs-comment {
   color: var(--hl-com);
