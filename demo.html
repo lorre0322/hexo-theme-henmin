@@ -1,0 +1,221 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <script src="/main.js"></script>
+    <title>Upload | Echo Api</title>
+    <style>
+        :root {
+            --bo: #369068;
+            --er: #faa8a8
+        }
+
+        * {
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box
+        }
+
+        html {
+            background-color: Canvas;
+            color: CanvasText;
+            color-scheme: dark light;
+            line-height: 2em;
+            font-size: 16px
+        }
+
+        a {
+            color: var(--bo);
+            text-decoration: none;
+            transition: color .5s
+        }
+
+        a:hover {
+            color: var(--er)
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        .form {
+            margin-bottom: 2em;
+            line-height: 2.5em;
+            text-align: left
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 8px;
+            font-size: 16px;
+            outline-color: var(--bo);
+            border: 1px solid var(--bo);
+            border-radius: 5px
+        }
+
+        input[type=text]::before {
+            content: "45897"
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            margin: 20px auto;
+            padding: 15px;
+            box-sizing: border-box
+        }
+
+        #po {
+            margin: 0 auto 50px;
+            padding: 5px 0;
+            max-width: 120px;
+            text-align: center;
+            color: var(--bo);
+            border: 1px solid var(--bo);
+            border-radius: 8px;
+            background-color: Canvas;
+            transition: all .5s
+        }
+
+        #po:hover {
+            background-color: var(--bo);
+            color: #fff
+        }
+
+        .me {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            list-style: none;
+            overflow: auto;
+            padding: 5px 15px;
+            background: Canvas;
+            z-index: 10
+        }
+
+        .me a {
+            padding: 5px
+        }
+
+        #msg {
+            width: 300px;
+            font-size: 13px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0
+        }
+
+        .msg {
+            width: auto;
+            display: inline-block;
+            border: 1px solid var(--bo);
+            padding: 2px 8px;
+            border-radius: 8px;
+            margin: 10px;
+            background: Canvas;
+            transition: all .5s
+        }
+
+        .msg.err {
+            border: 1px solid var(--er)
+        }
+
+        #ab {
+            margin: 15px 0
+        }
+
+        #ab>span {
+            margin: 0 3px;
+            font-size: 0;
+            overflow: hidden;
+            display: inline-block;
+            width: 148px;
+            height: 148px;
+            border: 1px solid var(--bo);
+            border-radius: 5px;
+            position: relative
+        }
+
+        #ab>span::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            background-color: rgba(100, 100, 100, 0);
+            height: 100%;
+            transition: background-color .5s;
+            z-index: 1
+        }
+
+        #ab>span:hover::before {
+            background-color: rgba(100, 100, 100, .4)
+        }
+
+        #ab span .del {
+            position: absolute;
+            top: 42%;
+            left: 0;
+            right: 0;
+            font-size: 14px;
+            z-index: 2;
+            background-color: var(--er);
+            opacity: 0;
+            margin-inline: auto;
+            transition: opacity .5s
+        }
+
+        #ab span:hover .del {
+            opacity: 1
+        }
+
+        #ab span:hover img {
+            transform: scale(1.1)
+        }
+
+        #ab img {
+            transform: scale(1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h3>Album</h3>
+        <div class="ctrl" style="text-align: right;"><button id="prev">prev</button><span id="nowpage">1</span>/ <span
+                id="maxpage">2</span><button id="next">next</button></div>
+        <div id="ab"><span><img src="/img/20230813可乐.jpg"><span class="del">Delete</span></span><span><img
+                    src="/img/20230811修狗.jpg"><span class="del">Delete</span></span><span><img
+                    src="/img/20230806启程.jpg"><span class="del">Delete</span></span><span><img
+                    src="/img/20230715欧包.jpg"><span class="del">Delete</span></span><span><img
+                    src="/img/2023076蓝色.jpg"><span class="del">Delete</span></span><span><img
+                    src="/img/2023074痕迹.jpg"><span class="del">Delete</span></span></div>
+        <div class="form"><label>Name : <input id="name" placeholder="name" type="text"></label><label>Album : <input
+                    id="album" placeholder="album" type="text" value="life"></label><label>Upload : <input id="file"
+                    type="file" onchange="getFile()"></label><label>Markdown : <input id="md" placeholder="md"
+                    type="text"></label></div>
+        <div id="po">😎 submit</div>
+    </div>
+    <div class="me"><a href="/login.html">Login</a><a href="/moment.html">Moment</a><a
+            href="/list-moment.html">MomentList</a><a href="/upload.html">Upload</a></div>
+    <div id="msg"></div>
+    <script>var page = 1, maxpage = 1; const delImg = async (e, a) => { if (window.confirm("你是否删除：" + a + " ? ")) { const a = await _req.del(`/img/${e}`, { token: localStorage.getItem("e-token") || "" }); "success" === a.msg ? (msg.sc("Delete success ! "), getlist()) : msg.er(a.reason || "Delete failed .") } }, getlist = async e => { const a = await _req.get(`/img/list/${page}/`); maxpage = a.maxpage, $("nowpage").innerText = page, $("maxpage").innerText = maxpage, $("ab").innerHTML = "", a.data.forEach((e => { const a = document.createElement("span"), t = document.createElement("img"), n = document.createElement("span"); n.innerText = "Delete", n.className = "del", n.onclick = () => { delImg(e.id, e.name) }, t.src = "/img/" + e.name + ".jpg", a.appendChild(t), a.appendChild(n), $("ab").appendChild(a) })) }; getlist(), $("prev").onclick = () => { page > 1 && page--, getlist() }, $("next").onclick = () => { page < maxpage && page++, getlist() }; const getDate = () => { let e = new Date, a = e.getFullYear().toString(), t = e.getMonth() + 1; t < 10 && (t = "0" + t); let n = e.getDate(); return n < 10 && (n = "0" + n), a + t + n }; $("name").value = getDate(); let img_data = ""; const getFile = () => { var e = new FileReader; e.onload = function (e) { img_data = e.target.result }, e.readAsDataURL($("file").files[0]) }; $("po").onclick = async () => { const e = $("name").value, a = $("album").value, t = window.location.host; $("md").value = `![${e}](${t}/img/${e}.jpg)`; const n = await _req.post("/img", { name: e, album: a, img_data: img_data, token: localStorage.getItem("e-token") || "" }); "success" === n.msg ? (msg.sc("Upload success ! "), getlist()) : msg.er(n.reason || "Upload failed") }, $("md").onfocus = () => { $("md").select(), document.execCommand("copy"), $("md").blur() };</script>
+</body>
+
+</html>

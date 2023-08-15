@@ -10,7 +10,7 @@ html{
   line-height: 2em;
   font-family: "宋体", serif;
   font-weight: 100;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: .2px;
 }
 
@@ -44,7 +44,12 @@ a{
   color: var(--tx-pr);
   text-decoration: none;
 }
-h1,h2,h3,h4,h5,h6{
+h1{
+  margin-top: 2em;
+  padding-bottom: 10px;
+  border-bottom:1px solid var(--bg-se);
+}
+h2,h3,h4,h5,h6{
   margin-top: .8em;
   margin-bottom: .2em;
 }
@@ -89,7 +94,7 @@ input[type=text],textarea{
 }
 .wrap{
   min-width: 270px;
-  max-width: 600px;
+  max-width: 760px;
   margin-inline: auto;
   padding: 0 10px;
   box-sizing: border-box;
@@ -123,4 +128,38 @@ input[type=text],textarea{
   background-color: var(--bg-se);
   z-index: 9999;
   transition: width .1s;
+}
+.nt{
+  margin: 1em 0;
+  padding: 0.8em;
+  .nt-ti{
+    font-weight: 700;
+  }
+  .nt-bd>p{
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.5em;
+  }
+  &.nt{
+    background: var(--bg-se);
+    border-left: 3px solid var(--tx-pr);
+  }
+  &.suc{
+    border-left: 4px solid #84ba84;
+    .nt-ti::before{
+      content: "🎉 ";
+    }
+  }
+  &.warn{
+    border-left: 4px solid #ecb384;
+    .nt-ti::before{
+      content: "🙋🏻 ";
+    }
+  }
+  &.err{
+    border-left: 4px solid #c07171;
+    .nt-ti::before{
+      content: "🙅 ";
+    }
+  }
 }

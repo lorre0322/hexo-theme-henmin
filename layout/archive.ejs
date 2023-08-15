@@ -11,7 +11,7 @@
 </div>
 <section class="an dl-1">
 <% var last = "1998"%>
-<% page.posts.each(function (post,index) { %>
+<% page.posts?.each(function (post,index) { %>
 <article class="arti">
   <a class="arti-item" title="<%= post.desc || post.title %>" href="<%- url_for(post.path) %>"><%= post.title %>
   <%- partial('_partial/formate', { params: post.date }) %>

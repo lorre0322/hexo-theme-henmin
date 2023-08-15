@@ -15,7 +15,6 @@
     const keywords = value.split(/[\s\-]+/)
 
     wrap.innerHTML = ''
-    // const cdf=document.createElement('div')
     const cdf = document.createDocumentFragment()
     
     datas.forEach(ele => {

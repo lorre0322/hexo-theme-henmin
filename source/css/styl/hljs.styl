@@ -1,27 +1,60 @@
-code{
-  background-color: var(--bg-se);
-  color: var(--hl-key);
-  padding: 2px 5px;
-  border-radius: 5px;
-  margin-inline: 2px;
-  vertical-align: middle;
-}
-pre{
-  > code{
-    background-color: none;
-    color: var(--tx-pr);
-    margin: 0;
-    padding: 0;
-  }
-  overflow: auto;
+figure.highlight{
+  margin: 1em 0;
   box-sizing: border-box;
   padding: 1em;
-  border-radius: 8px;
+  overflow: auto;
+  border-radius: 5px;
   background-color: var(--bg-se);
-  font-size: 14px;
+  position: relative;
+}
+figure.highlight:hover{
+
+  .cp-code{
+    opacity: 1;
+  }
+}
+.cp-wrap{
+  margin-top: -0.5em;
+  padding: 1em 0;
+  box-sizing: border-box;
+  position:sticky;
+  line-height: 0em;
+  top: 0;
+  left: 0;
+  color: var(--hl-bui);
+  font-size: 12px;
+  font-weight: 700;
+  .cp-head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  span{
+    display: inline-block;
+    padding: 2px 5px;
+  }
+  .cp-lang{
+    text-transform: uppercase;
+  }
+  .cp-code{
+    opacity: .2;
+    transition: opacity .3s;
+  }
+}
+pre{
+  margin: 0;
+  code{
+    line-height: 0;
+    user-select:text;
+  }
+}
+code{
+  white-space:break-spaces;
+  width: 100%;
 }
 .hljs{
   &-comment{
+    font-style: italic;
     color: var(--hl-com);
   }
   &-built_in{

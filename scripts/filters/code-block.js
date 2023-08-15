@@ -11,8 +11,11 @@ hexo.extend.filter.register('after_render:html', function (data, local) {
     const table = $3
     const figure_before = $4
     const code_block_header = `
-    <div class="code-block-header" lang="${lang}">
-      <span class="copy-code">COPY</span>
+    <div class="cp-wrap" lang="${lang}">
+      <div class="cp-head">
+      <span class="cp-lang">${lang}</span>
+      <span class="cp-code">COPY</span>
+      </div>
     </div>
     `
     return `${figure_after}${code_block_header}${table}${figure_before}`
