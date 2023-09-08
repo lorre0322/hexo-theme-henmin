@@ -1,19 +1,17 @@
 <header class="wrap">
-  <nav class="menu">
-    <span id="load"><%- partial('svg/loading') %></span>
+<nav class="menu">
+  <span id="load"><%- partial('svg/loading') %></span>
 	<% for(item in theme.Header){ %>
-    <% if(theme.Header[item]){ %>
-      <a class="menu-item" href='<%=theme.Header[item]%>'>
-        <span>
-          <%- partial('svg/'+item) %>
-        </span>
-      </a>
-    <% } %>
+  <% if(theme.Header[item]){ %>
+  <a title="<%=item%>" class="menu-item" href='<%=theme.Header[item]%>'>
+    <span>
+      <%- partial('svg/'+item) %>
+    </span>
+  </a>
+  <% } %>
 	<% } %>
   <% if(theme.search.enable){ %>
-    <span id="search" class="menu-item">
-      <%- partial('_global/svg/search') %>
-    </span>
+  <span id="search" class="menu-item"><%- partial('_global/svg/search') %></span>
   <% } %>
 </nav>
 </header>

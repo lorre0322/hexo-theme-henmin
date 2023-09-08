@@ -1,12 +1,8 @@
 <div class="intro">
 	<% if(page.img){ %>
-	<div class="banner an dl-1">
-		<img src='<%=page.img%>' alt="">
-	</div>
+	<div class="banner an dl-1"><img src='<%=page.img%>' alt=""></div>
 	<% } %>
-	<h2 class="title an dl-2">
-		<a href="#"><%= page.title %> </a>
-	</h2>
+	<h2 class="an dl-2"><a href="#"><%= page.title %> </a></h2>
 	<div class="meta an dl-3">
     <%- partial('_partial/formate', { params: page.date }) %>
 		<span class="author">by .<%= page.author || theme.Author.name %> </span>

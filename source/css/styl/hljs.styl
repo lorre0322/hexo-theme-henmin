@@ -14,7 +14,6 @@ figure.highlight:hover{
   }
 }
 .cp-wrap{
-  margin-top: -0.5em;
   padding: 1em 0;
   box-sizing: border-box;
   position:sticky;
@@ -25,6 +24,7 @@ figure.highlight:hover{
   font-size: 12px;
   font-weight: 700;
   .cp-head{
+    margin-bottom: 8px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -41,11 +41,24 @@ figure.highlight:hover{
     transition: opacity .3s;
   }
 }
+code{
+  font-size: .9em;
+  background-color: var(--bg-se);
+  padding: 3px 8px;
+  margin-inline: 5px;
+  border-radius: 5px;
+  color: var(--hl-tit);
+}
 pre{
   margin: 0;
   code{
+    padding: 0;
+    font-size: 1em;
+    background-color: transparent;
+    color: var(--tx-pr);
     line-height: 0;
-    user-select:text;
+    border-radius: 5px;
+    white-space:nowrap;
   }
 }
 code{

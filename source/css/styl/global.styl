@@ -8,10 +8,7 @@ html{
   background-color: var(--bg);
   color: var(--tx-pr);
   line-height: 2em;
-  font-family: "宋体", serif;
-  font-weight: 100;
-  font-size: 20px;
-  letter-spacing: .2px;
+  font: 16px/1.4em "宋体", serif;
 }
 
 ::-webkit-scrollbar{
@@ -25,11 +22,6 @@ background-color: var(--bg);
 background-color: var(--tx-se);
 }
 
-@media screen and (max-width:680px) {
-  html{
-    font-size: 16px;
-  }
-}
 svg{
   width: 1em;
 }
@@ -69,6 +61,7 @@ p{
   line-height: 2em;
 }
 ul,ol{
+  line-height: 2em;
   margin: 1em 0;
   padding-left: 1.5em;
 }
@@ -85,6 +78,10 @@ hr{
   border: .5px solid var(--tx-se);
   margin: 30px 0;
 }
+del{
+  color: var(--tx-se);
+  padding-inline: 5px;
+}
 input[type=text],textarea{
   width: 100%;
   box-sizing: border-box;
@@ -94,7 +91,7 @@ input[type=text],textarea{
 }
 .wrap{
   min-width: 270px;
-  max-width: 760px;
+  max-width: 700px;
   margin-inline: auto;
   padding: 0 10px;
   box-sizing: border-box;
@@ -115,7 +112,7 @@ input[type=text],textarea{
 }
 .list.item li::after{
   content: "/";
-  padding: 0 10px;
+  padding: 0 5px 0 10px;
   font-size: 13px;
   vertical-align: bottom;
 }
