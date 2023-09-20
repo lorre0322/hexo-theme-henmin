@@ -1,6 +1,6 @@
 <% const sub_title =  page.category || page.tag %>
 <h3 class="an"><a href="/archives">「  归档  」</a><sub><%= sub_title%></sub></h3>
-<div class="list an" style="font-weight: 700;">
+<div class="list an dl-1" style="font-weight: 700;">
   <%- list_categories(site.categories,{
     show_count: true,
     class: 'ca',

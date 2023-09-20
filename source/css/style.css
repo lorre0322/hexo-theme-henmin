@@ -93,7 +93,6 @@
 }
 * {
   -webkit-tap-highlight-color: transparent;
-  user-select: none;
 }
 html {
   min-width: 250px;
@@ -137,7 +136,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
+  margin-top: 1.5em;
+  user-select: none;
   margin-bottom: 0.2em;
 }
 h1 {
@@ -155,6 +155,7 @@ h6 {
   font-size: 1.2em;
 }
 p {
+  user-select: none;
   line-height: 2em;
 }
 ul,
@@ -260,6 +261,7 @@ textarea {
   content: "🙅 ";
 }
 details {
+  user-select: none;
   padding: 10px;
   margin: 1em 0;
   border-radius: 8px;
@@ -284,6 +286,9 @@ details > div {
 details[open] > summary::after {
   content: 'ᕕ( ᐛ )ᕗ';
 }
+.toc {
+  user-select: none;
+}
 .toc .t-li {
   padding-left: 1.6em;
   padding-top: 10px;
@@ -300,6 +305,9 @@ details[open] > summary::after {
 }
 .toc ol>li {
   padding-left: 0;
+}
+.list {
+  user-select: none;
 }
 .list .ca-list,
 .list .tag-list {
@@ -322,6 +330,7 @@ details[open] > summary::after {
   color: var(--tx-se);
 }
 .meta {
+  user-select: none;
   margin: 1.2em 0;
   font-size: 0.9em;
 }
@@ -453,6 +462,7 @@ code {
   margin: 0;
 }
 .more {
+  user-select: none;
   margin: 50px 0;
   padding: 40px 0;
   border-top: 1px solid rgba(200,200,200,0.2);
@@ -502,6 +512,7 @@ code {
 }
 footer {
   font-size: 0.9em;
+  user-select: none;
   text-align: right;
   margin-bottom: 20px;
 }
