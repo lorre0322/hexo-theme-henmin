@@ -618,11 +618,26 @@ header .menu svg {
   vertical-align: bottom;
 }
 header .menu svg g {
-  transition: stroke 0.2s;
+  stroke: #8a8a8a;
 }
 header .menu a.active svg g,
 header .menu a:hover svg g {
   stroke: var(--tx-lin);
+}
+header .menu a.active .a {
+  animation-name: stokeA;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+header .menu a.active .b {
+  animation-name: stokeB;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+header .menu a.active .c {
+  animation-name: opa;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
 }
 #load {
   opacity: 0;
@@ -641,5 +656,101 @@ header .menu a:hover svg g {
     margin-left: 0;
     margin-right: auto;
     order: 0;
+  }
+}
+@-moz-keyframes stokeA {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 100 100;
+  }
+}
+@-webkit-keyframes stokeA {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 100 100;
+  }
+}
+@-o-keyframes stokeA {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 100 100;
+  }
+}
+@keyframes stokeA {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 100 100;
+  }
+}
+@-moz-keyframes stokeB {
+  from {
+    stroke-dasharray: 0 160;
+  }
+  to {
+    stroke-dasharray: 160 160;
+  }
+}
+@-webkit-keyframes stokeB {
+  from {
+    stroke-dasharray: 0 160;
+  }
+  to {
+    stroke-dasharray: 160 160;
+  }
+}
+@-o-keyframes stokeB {
+  from {
+    stroke-dasharray: 0 160;
+  }
+  to {
+    stroke-dasharray: 160 160;
+  }
+}
+@keyframes stokeB {
+  from {
+    stroke-dasharray: 0 160;
+  }
+  to {
+    stroke-dasharray: 160 160;
+  }
+}
+@-moz-keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

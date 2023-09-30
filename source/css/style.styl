@@ -40,11 +40,50 @@ header {
     vertical-align: bottom;
   }
   .menu svg g{
-    transition: stroke .2s;
+    stroke: #8A8A8A;
   }
   .menu a.active svg g,
   .menu a:hover svg g{
     stroke:var(--tx-lin);
+  }
+  .menu a.active .a{
+    animation-name: stokeA;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  .menu a.active .b{
+    animation-name: stokeB;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .menu a.active .c{
+    animation-name: opa;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes stokeA {
+  from {
+    stroke-dasharray: 0 100;
+  }
+  to {
+    stroke-dasharray: 100 100;
+  }
+}
+@keyframes stokeB {
+  from {
+    stroke-dasharray: 0 160;
+  }
+  to {
+    stroke-dasharray: 160 160;
+  }
+}
+@keyframes opa {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 #load{
